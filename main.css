@@ -1,0 +1,83 @@
+html,
+body{
+    padding:0;
+    margin:0;
+}
+
+.parent {
+    width: 100%;
+    height: auto;
+    background-color: #dde0e449;
+}
+
+.cards {
+    padding-left: 10%;
+    display: flex;
+    flex-direction: row;
+}
+
+.cards img {
+    width: 450px;
+    height: 500px;
+    object-fit: cover;
+    transition: width 0.5s ease;
+}
+
+.cards img:hover {
+    width: 600px;
+}
+
+.cards img:hover ~ img {
+    width: 370px;
+}
+
+
+
+
+.appearing-text,
+.appearing-text2,
+.appearing-text3{
+    position:relative;
+    bottom:200px;
+    left:150px;
+    color: white;
+    font-weight: 600;
+    opacity: 0; 
+    transform: translateX(-40px); 
+    pointer-events: none;
+}
+
+#img1:hover ~ .appearing-text,
+#img2:hover ~ .appearing-text2,
+#img3:hover ~ .appearing-text3{
+    display: block;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    transform: translateX(-20px);
+}
+
+
+.slideshow-container{
+    display:flex;
+    justify-content: center;
+}
+
+.slide {
+    display: none;
+}
+
+.slide img{
+    object-fit:cover;
+    width:400px;
+    height:400px;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1s;
+}
+
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
